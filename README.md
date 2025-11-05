@@ -3,7 +3,7 @@
 <p  align="center">
   <a href="https://go-skill-icons.vercel.app/">
     <img
-      src="https://go-skill-icons.vercel.app/api/icons?i=java,junit,aspring,springdatajpa,springsecurity,api,jwt,mongo&theme=dark"
+      src="https://go-skill-icons.vercel.app/api/icons?i=java,junit,spring,springdatajpa,springsecurity,api,jwt,mongo&theme=dark"
     />
   </a>
 </p>
