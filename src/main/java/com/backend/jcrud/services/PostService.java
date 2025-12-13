@@ -27,7 +27,7 @@ public class PostService {
         return newPost;
     }
 
-    public Post update(Long id, Post postDetails){
+    public Post updatePost(Long id, Post postDetails){
         Post post = postRepository.findById(id).orElse(null);
         if(post != null){
             post.setTitle(postDetails.getTitle());
@@ -38,7 +38,7 @@ public class PostService {
         return null;
     }
 
-    public void delete(Long id){
+    public void deleteById(Long id){
         postRepository.deleteById(id);
     }
 }

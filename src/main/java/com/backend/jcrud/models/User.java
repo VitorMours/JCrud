@@ -2,10 +2,13 @@ package com.backend.jcrud.models;
 
 
 import java.io.Serializable;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
@@ -29,8 +32,10 @@ public class User implements Serializable {
     @Column(nullable = false)
     private String password; 
     
-    // @Column
-    // private List<Post> posts;
+
+
+    @OneToMany(mappedBy="user")
+    private List<Post> posts;
 
     public Long getId() {
         return id;
