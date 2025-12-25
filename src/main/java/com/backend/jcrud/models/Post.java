@@ -1,67 +1,64 @@
-package com.backend.jcrud.models;
+package com.backend.jcrud.models; 
+
 
 import java.io.Serializable;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.Table; 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id; 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
-@Entity
-@Table(name = "tb_posts")
+
+@Entity 
+@Table(name="tb_posts")
 public class Post implements Serializable {
+  private static final long serialVersion UID = 1L;  
 
-    private static final long serialVersionUID = 1L;
+  @Id 
+  @GeneratedValue(strategy=GenerationType.IDENTITY)
+  private Long id;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    public Long id;
+  @Column
+  private String title; 
 
-    @Column(nullable = false)
-    public String title;
+  @Column
+  private String content; 
+  
+  @Column
+  private User owner; 
+  
+  @Column
+  private boolean visibility;
 
-    @Column
-    public String content;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    public User user;
+  public Post(){}
 
-    public Long getId() {
-        return id;
-    }
+  public Post(String title, String content, User owner, boolean visibility){
+    this.title = title;
+    this.content = content;
+    this.owner = owner; 
+    this.visibility = visibility;
+  }
 
-    public String getTitle() {
-        return title;
-    }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+  // Setters 
+  public String setTitle(String newTitle){
+    this.title = newTitle;
+  }
 
-    public String getContent() {
-        return content;
-    }
+  public String setContent(string newContent){
+    this.content = content;
+  }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
+  public User setOwner(User newOwner){
+    this.owner = newOwner;
+  }
 
-    public User getUser() {
-        return user;
-    }
+  public boolean setVisibility(boolean newVisibility){
+    this.visibility = newVisibility;
+  }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        return sb.toString();
-    }
 }

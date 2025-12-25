@@ -1,9 +1,7 @@
 package com.backend.jcrud.models;
 
-
 import java.io.Serializable;
 import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
@@ -15,9 +13,7 @@ import jakarta.persistence.GenerationType;
 @Entity 
 @Table(name="tb_users")
 public class User implements Serializable {
-
     private static final long serialVersionUID = 1L;
-
 
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,20 +24,16 @@ public class User implements Serializable {
     
     @Column(nullable = false)    
     private String email; 
-    
+        
     @Column(nullable = false)
     private String password; 
-    
-
-
-    @OneToMany(mappedBy="user")
-    private List<Post> posts;
 
     public Long getId() {
-        return id;
+      return id;
     }
+    
     public void setId(Long id) {
-        this.id = id;
+      this.id = id;
     }
     
     public String getName() {
@@ -61,14 +53,8 @@ public class User implements Serializable {
     public String getPassword() {
         return password;
     }
+
     public void setPassword(String password) {
         this.password = password;
     }
-
-    // public List<Post> getPosts() {
-        // return posts;
-    // }
-    // public void setPosts(List<Post> posts) {
-        // this.posts = posts;
-    // }
 }

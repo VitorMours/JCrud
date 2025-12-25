@@ -39,6 +39,7 @@ public class PostControler {
 
     @PostMapping
     public ResponseEntity<Post> createPost(@RequestBody Post post){
+        System.out.println(post);
         Post newPost = postService.create(post);
         return ResponseEntity.ok().body(newPost);
     }
