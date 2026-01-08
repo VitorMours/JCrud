@@ -1,12 +1,9 @@
 package com.backend.jcrud.services;
 
-
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.backend.jcrud.repositories.OrderRepository;
-
 import com.backend.jcrud.models.Order;
 
 @Service 
@@ -29,11 +26,11 @@ public class OrderService {
         Order order = orderRepository.findById(id).orElse(null);
         return order;
     }
+    
     public Order updateOrder(Long id, Order newOrderData){
         Order order = orderRepository.findById(id).orElse(null);
 
         if(order.equals(null)){
-
             // TODO: Need to thrrow an error
         }
 
@@ -43,4 +40,7 @@ public class OrderService {
         return order;
     }
 
+    public void deleteOrder(Long id){
+        orderRepository.deleteById(id);
+    }
 }
