@@ -8,7 +8,12 @@
   </a>
 </p>
 
-O Jcrud é um projeto desenvolvido em **Java** com o **SpringBoot** com o intuito de desenvolver uma APi seguindo os padrões Rest,
-de forma que possa disponibilizar endpoints que podem ser usados para consumir, consultar e criar registros dentro do banco de dados 
-por meio de um swagger
+O JCrud é uma api que pode ser utilizada para criar um front-end de exemplo, de forma que possui uma diagramação,estrutura, e funcionamento dado de forma documentada, e facilitada. Possuindo um total de 5 entidades, posuem diversos relacionamentos de fato que podem ser usados para entender o funcionamento da paltaforma.
 
+
+
+
+# Future Features
+
+- [ ] Criar relacionamento entre as entidades que nao possuem chaves estrangeiras entre si.
+- [ ] Adicionar a entidade de status do pedido de forma que seja um enumerador
