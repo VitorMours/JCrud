@@ -10,7 +10,25 @@
 
 O JCrud é uma api que pode ser utilizada para criar um front-end de exemplo, de forma que possui uma diagramação,estrutura, e funcionamento dado de forma documentada, e facilitada. Possuindo um total de 5 entidades, posuem diversos relacionamentos de fato que podem ser usados para entender o funcionamento da paltaforma.
 
-## 🚀 Executando com Docker
+## 📟 Esquema do Banco de Dados
+
+<p align="center">
+  <img src="sql_schema.png" alt="Diagrama do Esquema do Banco de Dados" width="800"/>
+</p>
+
+O projeto possui 4 entidades principais com relacionamentos bem definidos:
+
+- **User (Usuários)**: Entidade central que representa os clientes
+- **Product (Produtos)**: Itens disponíveis para venda
+- **Order (Pedidos)**: Pedidos realizados pelos usuários
+- **Payment (Pagamentos)**: Pagamentos associados aos pedidos
+
+### Relacionamentos:
+- **User ↔ Order**: Um usuário pode ter vários pedidos (1:N)
+- **Order ↔ Payment**: Um pedido pode ter vários pagamentos (1:N)
+- **Order ↔ Product**: Um pedido pode conter vários produtos (N:N)
+
+##  🚀 Executando com Docker
 
 ### Pré-requisitos
 - Docker
