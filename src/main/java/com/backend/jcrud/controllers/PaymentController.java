@@ -19,12 +19,9 @@ import com.backend.jcrud.models.Payment;
 @RequestMapping("/payments")
 public class PaymentController {
     
-
     @Autowired 
     public PaymentService paymentService;
     
-
-
     @GetMapping
     public ResponseEntity<List<Payment>> getAllPayments(){
         List<Payment> payments = paymentService.getAllPayments();
